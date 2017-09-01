@@ -703,7 +703,12 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
                     if _outerScrollView !== nil
                     {
                         // Prevent the parent scroll view from scrolling
-                        _outerScrollView?.nsuiIsScrollEnabled = false
+//                        _outerScrollView?.nsuiIsScrollEnabled = false
+                        if !self.isScaleYEnabled {
+                            _outerScrollView?.nsuiIsScrollEnabled = true
+                        } else {
+                            _outerScrollView?.nsuiIsScrollEnabled = false
+                        }
                     }
                 }
                 
